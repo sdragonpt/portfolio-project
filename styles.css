@@ -1,0 +1,401 @@
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container-top{
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    display: inline-block;
+}
+
+section#projects {
+    margin-top: -200px;
+    padding: 40px 0;
+}
+
+.project {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h2 {
+    color: #333;
+}
+
+.project-info p {
+    color: #666;
+}
+
+.project-info a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.project-info a:hover {
+    background-color: #555;
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+body {
+    font-family: 'SF-UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Define três áreas: header, main, footer */
+    min-height: 100vh;
+}
+
+ @font-face {
+    font-family: 'SF-UI-Bold'; /* Escolha um nome para a fonte */
+    src: url('fonts/sf-ui-text-bold.woff') format('woff');
+    /* Substitua 'caminho/para/sua/fonte.woff' pelo caminho real para o seu arquivo WOFF */
+  }
+
+  @font-face {
+    font-family: 'SF-UI-Regular'; /* Escolha um nome para a fonte */
+    src: url('fonts/sf-ui-text-regular.woff') format('woff');
+    /* Substitua 'caminho/para/sua/fonte.woff' pelo caminho real para o seu arquivo WOFF */
+  }
+
+  @font-face {
+    font-family: 'SF-UI-Heavy'; /* Escolha um nome para a fonte */
+    src: url('fonts/sf-ui-text-heavy.woff') format('woff');
+    /* Substitua 'caminho/para/sua/fonte.woff' pelo caminho real para o seu arquivo WOFF */
+  }
+
+  @font-face {
+    font-family: 'SF-UI-Light'; /* Escolha um nome para a fonte */
+    src: url('fonts/sf-ui-text-light.woff') format('woff');
+    /* Substitua 'caminho/para/sua/fonte.woff' pelo caminho real para o seu arquivo WOFF */
+  }
+
+  .woof {
+    font-family: 'SF-UI-Bold', sans-serif;
+    /* Use o mesmo nome que você definiu em @font-face para aplicar a fonte à classe .woof */
+ /* Ajuste conforme necessário */
+    /* Adicione outras propriedades de fonte conforme necessário */
+  }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header, nav, footer {
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    z-index: 1000; /* Certifique-se de que o header fica sobreposto a outros elementos */
+}
+
+nav {
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999; /* Certifique-se de que o nav fica sobreposto ao conteúdo abaixo */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffcc00; /* Cor ao passar o mouse */
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Define duas áreas: header e main */
+    min-height: 100vh;
+    margin-top: 60px; /* Garante que o conteúdo não fique sob o header fixo */
+}
+
+section {
+    padding: 40px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#link-topo{
+    text-decoration: none;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #00bac6;
+    position: fixed;
+    padding: 12px 12px;
+    right: 20px;
+    bottom: 20px;
+    height: 24px;
+}
+
+#link-topo:hover{
+    transition-duration: 300ms;
+    background-color: rgb(0, 44, 47)
+}
+
+/* Adicione outras regras CSS conforme necessário */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    overflow: hidden; /* Impede a barra de rolagem padrão do navegador */
+}
+
+.container {
+    width: 50%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.container-top {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-top: -60px;
+}
+
+
+
+.slide {
+    height: 100vh; /* Ocupa toda a altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#slide0 {
+    background-image: url(images/Topo1.jpg);
+    background-size: cover; /* opcional: ajusta o tamanho da imagem para cobrir todo o elemento */
+    background-repeat: no-repeat; 
+}
+
+#slide1 {
+    background-image: url(images/Topo2.jpg);
+    background-size: cover; /* opcional: ajusta o tamanho da imagem para cobrir todo o elemento */
+    background-color: #fff/*#6C9500*/;
+    color: #fff;
+}
+
+#slide2 {
+    background-color: #2d92cc;
+    color: #fff;
+}
+
+#slide3 {
+    background-color: #fff;
+    color: #fff;
+}
+
+#slide4{
+    background-color: #1f628a;
+    color: white;
+}
+
+button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .name {
+    font-size: 18px; /* Ajuste conforme necessário */
+  }
+  
+  @keyframes scaleAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #36B6FF; /* Cor desejada para o ícone */
+    transition: transform 0.3s ease;
+    position: relative; /* Adicionado para estabelecer um contexto de posicionamento para o z-index */
+    z-index: 2; /* Define a ordem de empilhamento acima do mini-menu */
+    user-select: none; /* Impede a seleção de texto no ícone */
+  }
+ 
+  .mini-menu {
+    text-align: left;
+    display: none;
+    position: absolute;
+    right: 60px;
+    background-color: #d0d0d0;
+    padding-right: 160px;
+    padding-top: 200px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    transform-origin: top right;
+    opacity: 0; /* Define a opacidade inicial para 0 (totalmente transparente) */
+    transition: opacity 0.5s ease; /* Adiciona uma transição suave para a opacidade */
+  }
+  
+  .mini-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  /* Adiciona um estilo quando o ícone é clicado e o mini menu é exibido */
+  .menu-icon.active {
+    color: #fff;
+    transform: rotate(45deg);
+  }
+  
+  .menu-icon.active + .mini-menu {
+    display: block;
+    top: 50px; /* Alterado para 0 para exibir o mini menu acima do cabeçalho */
+    opacity: 1; /* Torna o elemento completamente visível */
+    transition-delay: 0.1s; /* Adiciona um pequeno atraso à transição para melhorar a experiência visual */
+  }
+
+  .texto{
+    padding-top: 80px;
+    padding-left: 120px;
+    font-size: 70px;
+    color: #fff;
+    font-family: 'SF-UI-Heavy', sans-serif;
+  }
+
+  #indicadores {
+    position: fixed;
+    right: 70px;
+    top: 80%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.indicador {
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, opacity 0.5s ease-in-out; /* Adiciona uma transição de fade */
+}
+
+/* Estilo para o indicador ativo */
+.indicador.ativo {
+    background-color: #3498db;
+    opacity: 0.8; /* Ajuste conforme necessário */
+    transform: scale(1.2);
+}
+
+.indicador.preto.ativo {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+.indicador.branco.ativo {
+    background-color: #36B6FF;
+    opacity: 0.8;
+}
+
+.indicador.azul.ativo {
+    background-color: #1f628a;
+    opacity: 0.8;
+}
+
+.final{
+    margin-top: 500px;
+    bottom: 100px;
+}
+
+
+  

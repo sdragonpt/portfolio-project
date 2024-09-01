@@ -1,20 +1,34 @@
-
-
-.container {
+/* .container {
     width: 80%;
     margin: 0 auto;
-}
+} */
 
-.container-top{
+/* .container-top{
     width: 100%;
     margin: 0 auto;
+} */
+
+.header {
+    padding-top: 1em;
+    padding-left: 9em;
+    padding-right: 9em;
+    font-size: 40px;
+    color: #fff;
+    font-family: 'SF-UI-Heavy', sans-serif;
 }
 
-header {
+.texto{
+    padding-top: 1em;
+    padding-left: 9em;
+    padding-right: 9em;
+    font-size: 40px;
     color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    display: inline-block;
+    font-family: 'SF-UI-Heavy', sans-serif;
+}
+
+p{
+    font-family: 'SF-UI-Regular';
+    font-size: 24px;
 }
 
 section#projects {
@@ -31,6 +45,7 @@ section#projects {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
+
 
 .project:hover {
     transform: scale(1.05);
@@ -109,12 +124,12 @@ body {
     /* Substitua 'caminho/para/sua/fonte.woff' pelo caminho real para o seu arquivo WOFF */
   }
 
-  .woof {
+.woof {
     font-family: 'SF-UI-Bold', sans-serif;
     /* Use o mesmo nome que você definiu em @font-face para aplicar a fonte à classe .woof */
  /* Ajuste conforme necessário */
     /* Adicione outras propriedades de fonte conforme necessário */
-  }
+}
 
 .container {
     width: 80%;
@@ -123,13 +138,6 @@ body {
 
 header, nav, footer {
     color: #fff;
-}
-
-header {
-    text-align: center;
-    padding: 1em 0;
-    width: 100%;
-    z-index: 1000; /* Certifique-se de que o header fica sobreposto a outros elementos */
 }
 
 nav {
@@ -231,20 +239,19 @@ body {
 }
 
 #slide0 {
-    background-image: url(images/Topo1.jpg);
+    /* background-image: url(images/Topo1.jpg);
     background-size: cover; /* opcional: ajusta o tamanho da imagem para cobrir todo o elemento */
-    background-repeat: no-repeat; 
+    /* background-repeat: no-repeat;  */
+    background-color: #2D70CB;
 }
 
 #slide1 {
-    background-image: url(images/Topo2.jpg);
-    background-size: cover; /* opcional: ajusta o tamanho da imagem para cobrir todo o elemento */
-    background-color: #fff/*#6C9500*/;
+    background-color: #fff;
     color: #fff;
 }
 
 #slide2 {
-    background-color: #2d92cc;
+    background-color: #2D70CB;
     color: #fff;
 }
 
@@ -254,7 +261,7 @@ body {
 }
 
 #slide4{
-    background-color: #1f628a;
+    background-color: #2D70CB;
     color: white;
 }
 
@@ -278,11 +285,11 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
   
-  .name {
-    font-size: 18px; /* Ajuste conforme necessário */
-  }
+.name {
+    font-size: 18px; 
+}
   
   @keyframes scaleAnimation {
     0% {
@@ -294,63 +301,9 @@ button:hover {
     100% {
       transform: scale(1);
     }
-  }
-  
-  .menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-    color: #36B6FF; /* Cor desejada para o ícone */
-    transition: transform 0.3s ease;
-    position: relative; /* Adicionado para estabelecer um contexto de posicionamento para o z-index */
-    z-index: 2; /* Define a ordem de empilhamento acima do mini-menu */
-    user-select: none; /* Impede a seleção de texto no ícone */
-  }
- 
-  .mini-menu {
-    text-align: left;
-    display: none;
-    position: absolute;
-    right: 60px;
-    background-color: #d0d0d0;
-    padding-right: 160px;
-    padding-top: 200px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    transform-origin: top right;
-    opacity: 0; /* Define a opacidade inicial para 0 (totalmente transparente) */
-    transition: opacity 0.5s ease; /* Adiciona uma transição suave para a opacidade */
-  }
-  
-  .mini-menu a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
-  
-  /* Adiciona um estilo quando o ícone é clicado e o mini menu é exibido */
-  .menu-icon.active {
-    color: #fff;
-    transform: rotate(45deg);
-  }
-  
-  .menu-icon.active + .mini-menu {
-    display: block;
-    top: 50px; /* Alterado para 0 para exibir o mini menu acima do cabeçalho */
-    opacity: 1; /* Torna o elemento completamente visível */
-    transition-delay: 0.1s; /* Adiciona um pequeno atraso à transição para melhorar a experiência visual */
-  }
+}
 
-  .texto{
-    padding-top: 80px;
-    padding-left: 120px;
-    font-size: 70px;
-    color: #fff;
-    font-family: 'SF-UI-Heavy', sans-serif;
-  }
-
-  #indicadores {
+#indicadores {
     position: fixed;
     right: 70px;
     top: 80%;
@@ -372,7 +325,7 @@ button:hover {
 
 /* Estilo para o indicador ativo */
 .indicador.ativo {
-    background-color: #3498db;
+    background-color: #fff;
     opacity: 0.8; /* Ajuste conforme necessário */
     transform: scale(1.2);
 }
@@ -383,12 +336,12 @@ button:hover {
 }
 
 .indicador.branco.ativo {
-    background-color: #36B6FF;
+    background-color: #2D70CB;
     opacity: 0.8;
 }
 
 .indicador.azul.ativo {
-    background-color: #1f628a;
+    background-color: #2D70CB;
     opacity: 0.8;
 }
 

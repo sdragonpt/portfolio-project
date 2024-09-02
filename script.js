@@ -9,10 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 1. Definir títulos para cada slide
     var slideTitles = [
-        'Sérgio Ribeiro - Home',
+        'Sérgio Ribeiro',
         'Sérgio Ribeiro - Projetos',
-        'Sérgio Ribeiro - Sobre',
-        'Sérgio Ribeiro - Contato'
         // Adicione mais títulos conforme necessário para cada slide
     ];
 

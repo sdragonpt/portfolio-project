@@ -8,19 +8,40 @@
     margin: 0 auto;
 } */
 
+.logo{
+    margin-top: 60px;
+    color: #dddddd;
+}
+
+.texto a:hover{
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.header a:hover{
+    color: #ddd;
+    transition: color 0.3s ease-in-out;
+}
+
 .header {
-    padding-top: 1em;
-    padding-left: 9em;
-    padding-right: 9em;
+    padding-top: 3vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
     font-size: 40px;
     color: #fff;
     font-family: 'SF-UI-Heavy', sans-serif;
+    position: fixed;
 }
 
 .texto{
-    padding-top: 1em;
-    padding-left: 9em;
-    padding-right: 9em;
+    padding-top: 9vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
     font-size: 40px;
     color: #fff;
     font-family: 'SF-UI-Heavy', sans-serif;
@@ -29,6 +50,49 @@
 p{
     font-family: 'SF-UI-Regular';
     font-size: 24px;
+}
+
+.lang {
+    display: flex; /* Alinha as divs na mesma linha */
+    gap: 10px; /* Espaço entre os itens, ajuste conforme necessário */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    font-size: 16px;
+    font-family: 'SF-UI-Regular';
+}
+
+.lang div {
+    display: flex; /* Permite alinhar ícones e textos horizontalmente */
+    align-items: center; /* Alinha ícones e textos verticalmente ao centro */
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.html{
+    background-color: #e34c26;
+}
+
+.css{
+    background-color: #264de4;
+}
+
+.js{
+    background-color: #f0db4f;
+}
+
+.lang i {
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
+    margin-top: 2px !important; /* Desce o ícone 2px */
+}
+
+.lang a {
+    color: #ffffff; /* Cor do texto, ajuste conforme necessário */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+hr{
+    border: 1px solid #bbb;
+    border-radius: 1px;
+    margin-top: 32px;
 }
 
 section#projects {
@@ -246,7 +310,7 @@ body {
 }
 
 #slide1 {
-    background-color: #fff;
+    background-color: #2D70CB;
     color: #fff;
 }
 

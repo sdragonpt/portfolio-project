@@ -18,11 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 200);
 
         updateIndicadores(currentSlide);
-
-        var menuIcon = document.getElementById('menuIcon');
-        if (menuIcon.classList.contains('active')) {
-            menuIcon.classList.remove('active');
-        }
     }
 
     autoRotateInterval = setInterval(autoRotate, 20000000);
@@ -46,23 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 800);
 
         updateIndicadores(currentSlide);
-
-        var menuIcon = document.getElementById('menuIcon');
-        if (menuIcon.classList.contains('active')) {
-            menuIcon.classList.remove('active');
-        }
     });
-
-    var linkToSlide4 = document.querySelector('.mini-menu a[href="#slide4"]');
-    if (linkToSlide4) {
-        linkToSlide4.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            currentSlide = 4;
-            scrollToSlide(currentSlide);
-            updateIndicadores(currentSlide);
-        });
-    }
 
     updateIndicadores(currentSlide);
 
@@ -92,7 +71,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    document.getElementById('menuIcon').addEventListener('click', function () {
-        this.classList.toggle('active');
+    document.getElementById('homeLink').addEventListener('click', function (event) {
+        event.preventDefault();  // Prevent the default anchor behavior
+        clearInterval(autoRotateInterval);
+        currentSlide = 0;
+        scrollToSlide(currentSlide);
+        updateIndicadores(currentSlide);
+    });
+
+    document.getElementById('projectsLink').addEventListener('click', function (event) {
+        event.preventDefault();  // Prevent the default anchor behavior
+        clearInterval(autoRotateInterval);
+        currentSlide = 1;
+        scrollToSlide(currentSlide);
+        updateIndicadores(currentSlide);
     });
 });

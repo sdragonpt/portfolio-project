@@ -301,30 +301,6 @@ body {
     background-color: #1d2024;
 }
 
-/* #slide0 {
-    background-color: #2D70CB;
-}
-
-#slide1 {
-    background-color: #2D70CB;
-    color: #fff;
-}
-
-#slide2 {
-    background-color: #2D70CB;
-    color: #fff;
-}
-
-#slide3 {
-    background-color: #fff;
-    color: #fff;
-}
-
-#slide4{
-    background-color: #2D70CB;
-    color: white;
-} */
-
 button {
     position: fixed;
     bottom: 20px;
@@ -339,16 +315,6 @@ button {
 
 button:hover {
     background-color: #555;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-  
-.name {
-    font-size: 18px; 
 }
   
   @keyframes scaleAnimation {
@@ -405,7 +371,3 @@ button:hover {
     font-size: 18px;
 }
 
-.final{
-    margin-top: 500px;
-    bottom: 100px;
-}

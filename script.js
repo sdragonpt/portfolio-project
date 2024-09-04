@@ -1,135 +1,154 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Selecionar todos os slides e indicadores
     var slides = document.querySelectorAll('.slide');
     var indicadores = document.querySelectorAll('.indicador');
-    var currentSlide = 0; // Slide inicial
-    var totalSlides = slides.length;
-    var isChangingSlide = false; // Estado para evitar mudanças rápidas
+    var currentSlide = 0;
+    var isChangingSlide = false;
     var autoRotateInterval;
 
-    // 1. Definir títulos para cada slide
+    // Definir títulos para cada slide
     var slideTitles = [
         'Sérgio Ribeiro',
-        'Sérgio Ribeiro - Projetos',
-        // Adicione mais títulos conforme necessário para cada slide
+        'Sérgio Ribeiro - Projects',
+        'Sérgio Ribeiro - Work'
     ];
 
-    // 2. Função para atualizar o título da página
     function updateTitle(slideNumber) {
-        if (slideTitles[slideNumber]) {
-            document.title = slideTitles[slideNumber];
-        } else {
-            document.title = 'Sérgio Ribeiro';
-        }
+        document.title = slideTitles[slideNumber] || 'Sérgio Ribeiro';
     }
 
-    // 3. Função para rotacionar automaticamente os slides
     function autoRotate() {
-        if (isChangingSlide) return; // Evitar múltiplas mudanças simultâneas
-
-        // Avançar para o próximo slide
-        currentSlide = (currentSlide + 1) % totalSlides;
-        isChangingSlide = true;
-        scrollToSlide(currentSlide); // Rolagem suave para o slide atual
-
-        // Permitir mudanças após um curto intervalo
-        setTimeout(function () {
-            isChangingSlide = false;
-        }, 200);
-
-        updateIndicadores(currentSlide); // Atualizar indicadores
-        updateTitle(currentSlide); // Atualizar o título da página
+        if (isChangingSlide) return;
+        currentSlide = (currentSlide + 1) % slides.length;
+        scrollToSlide(currentSlide);
     }
 
-    // 4. Definir intervalo de rotação automática (200 segundos)
-    autoRotateInterval = setInterval(autoRotate, 200000); // 200000 ms = 200 segundos
+    autoRotateInterval = setInterval(autoRotate, 200000);
 
-    // 5. Manipulador de eventos de roda para navegar entre os slides
     document.addEventListener('wheel', function (event) {
-        clearInterval(autoRotateInterval); // Parar a rotação automática ao interagir
+        if (isChangingSlide) return;
 
-        if (isChangingSlide) return; // Evitar mudanças rápidas
+        clearInterval(autoRotateInterval);
 
         if (event.deltaY > 0) {
-            // Scroll para baixo: próximo slide
-            currentSlide = Math.min(currentSlide + 1, totalSlides - 1);
+            currentSlide = Math.min(currentSlide + 1, slides.length - 1);
         } else if (event.deltaY < 0) {
-            // Scroll para cima: slide anterior
             currentSlide = Math.max(currentSlide - 1, 0);
         }
 
-        isChangingSlide = true;
-        scrollToSlide(currentSlide); // Rolagem suave para o slide atual
+        scrollToSlide(currentSlide);
+    });
 
-        // Permitir mudanças após um intervalo maior
+    function scrollToSlide(slideNumber) {
+        isChangingSlide = true;
+        slides[slideNumber].scrollIntoView({ behavior: 'smooth' });
+
         setTimeout(function () {
             isChangingSlide = false;
         }, 800);
 
-        updateIndicadores(currentSlide); // Atualizar indicadores
-        updateTitle(currentSlide); // Atualizar o título da página
-    });
+        updateIndicadores(slideNumber);
+        updateTitle(slideNumber);
+    }
 
-    // 6. Atualizar indicadores e título no carregamento inicial
-    updateIndicadores(currentSlide);
-    updateTitle(currentSlide); // Definir o título inicial
+    function updateIndicadores(slideNumber) {
+        indicadores.forEach(function (indicador, index) {
+            indicador.classList.toggle('ativo', index === slideNumber);
+        });
+    }
 
-    // 7. Manipuladores de clique para indicadores
     indicadores.forEach(function (indicador, index) {
         indicador.addEventListener('click', function () {
-            clearInterval(autoRotateInterval); // Parar a rotação automática
-            currentSlide = index; // Definir o slide atual com base no indicador clicado
-            scrollToSlide(currentSlide); // Rolagem suave para o slide atual
-            updateIndicadores(currentSlide); // Atualizar indicadores
-            updateTitle(currentSlide); // Atualizar o título da página
+            clearInterval(autoRotateInterval);
+            scrollToSlide(index);
         });
     });
 
-    // 8. Função para rolar suavemente para o slide especificado
-    function scrollToSlide(slideNumber) {
-        var targetSlide = slides[slideNumber];
-        targetSlide.scrollIntoView({
-            behavior: 'smooth'
-        });
-    }
-
-    // 9. Função para atualizar os indicadores ativos
-    function updateIndicadores(currentSlide) {
-        indicadores.forEach(function (indicador, index) {
-            if (index === currentSlide) {
-                indicador.classList.add('ativo');
-            } else {
-                indicador.classList.remove('ativo');
-            }
-        });
-    }
-
-    // 10. Manipuladores de clique para links de navegação
-    // Exemplo para 'homeLink' e 'projectsLink'. Adicione mais conforme necessário.
     var homeLink = document.getElementById('homeLink');
     if (homeLink) {
         homeLink.addEventListener('click', function (event) {
-            event.preventDefault();  // Prevenir o comportamento padrão do link
-            clearInterval(autoRotateInterval); // Parar a rotação automática
-            currentSlide = 0; // Definir para o slide 'Home'
-            scrollToSlide(currentSlide); // Rolagem suave para o slide 'Home'
-            updateIndicadores(currentSlide); // Atualizar indicadores
-            updateTitle(currentSlide); // Atualizar o título da página
+            event.preventDefault();
+            clearInterval(autoRotateInterval);
+            scrollToSlide(0);
         });
     }
 
     var projectsLink = document.getElementById('projectsLink');
     if (projectsLink) {
         projectsLink.addEventListener('click', function (event) {
-            event.preventDefault();  // Prevenir o comportamento padrão do link
-            clearInterval(autoRotateInterval); // Parar a rotação automática
-            currentSlide = 1; // Definir para o slide 'Projetos'
-            scrollToSlide(currentSlide); // Rolagem suave para o slide 'Projetos'
-            updateIndicadores(currentSlide); // Atualizar indicadores
-            updateTitle(currentSlide); // Atualizar o título da página
+            event.preventDefault();
+            clearInterval(autoRotateInterval);
+            scrollToSlide(1);
         });
     }
 
-    // 11. Definir o título inicial no carregamento
+    var workLink = document.getElementById('workLink');
+    if (workLink) {
+        workLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            clearInterval(autoRotateInterval);
+            scrollToSlide(2);
+        });
+    }
+
+    // Dados dos idiomas
+    const ptText = {
+        greeting: "olá, <br> sou o Sérgio! 👋 <br>",
+        welcome: "Bem-vindo ao meu site, onde mostro um pouco do meu trabalho",
+        passion: "O desenvolvimento web é uma área que gosto, mas minha verdadeira paixão <br> está na tecnologia. <br>Já tive a oportunidade de trabalhar como desenvolvedor backend na Xplora e completei um estágio em web design na JME.",
+        degree: "Atualmente, tenho uma licenciatura em Comunicação e Multimédia pela Universidade de Trás-os-Montes e Alto Douro.",
+        data: "1 de Setembro, 2024",
+        projects: "projetos",
+        summary: "Abaixo está um resumo dos projetos públicos em que trabalhei",
+        civicaTitle: "Base de Dados Civica",
+        civicaDesc: "Um projeto onde desenvolvi uma base de dados para uma <a href='https://civica.pt/' target='_blank'><u>empresa</u></a>",
+        crewardsTitle: "Projeto Crewards",
+        crewardsDesc: "Um projeto de front-end de um <a href='https://crewards.gg' target='_blank'><u>website</u></a> para um <a href='https://www.youtube.com/@Classy' target='_blank'><u>Youtuber</u></a>"
+    };
+
+    const enText = {
+        greeting: "hi there, <br> im Sérgio! 👋 <br>",
+        welcome: "Welcome to my website, where I showcase some of my work",
+        passion: "Web development is an area I enjoy, but my true passion lies in technology. I've had the opportunity to work as a backend developer at Xplora and completed an internship in web design at JME.",
+        degree: "Right now I hold a bachelor's degree in Communication & Multimedia from Universidade de Trás-os-Montes e Alto Douro.",
+        data: "September 1, 2024",
+        projects: "projects",
+        summary: "Below is a summary of public projects I've worked on",
+        civicaTitle: "Civica Database",
+        civicaDesc: "A project where I developed a database for a <a href='https://civica.pt/' target='_blank'><u>company</u></a>",
+        crewardsTitle: "Crewards project",
+        crewardsDesc: "A front-end project for a <a href='https://crewards.gg' target='_blank'><u>website</u></a> for a <a href='https://www.youtube.com/@Classy' target='_blank'><u>Youtuber</u></a>"
+    };
+
+    const elements = {
+        greeting: document.getElementById("greeting"),
+        welcome: document.getElementById("welcome"),
+        passion: document.getElementById("passion"),
+        degree: document.getElementById("degree"),
+        data: document.getElementById("data"),
+        projects: document.getElementById("projects"),
+        summary: document.getElementById("summary"),
+        civicaTitle: document.getElementById("civicaTitle"),
+        civicaDesc: document.getElementById("civicaDesc"),
+        crewardsTitle: document.getElementById("crewardsTitle"),
+        crewardsDesc: document.getElementById("crewardsDesc")
+    };
+
+    function switchLanguage(languageText) {
+        for (const key in elements) {
+            elements[key].innerHTML = languageText[key];
+        }
+        // Não chamar scrollToSlide aqui
+    }
+
+    document.getElementById("ptLink").addEventListener("click", function() {
+        switchLanguage(ptText);
+    });
+
+    document.getElementById("enLink").addEventListener("click", function() {
+        switchLanguage(enText);
+    });
+
+    // Atualizar indicadores e título no carregamento inicial
+    updateIndicadores(currentSlide);
     updateTitle(currentSlide);
 });

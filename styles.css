@@ -7,6 +7,28 @@
     width: 100%;
     margin: 0 auto;
 } */
+#greeting{
+    font-size: 30px;
+    font-family: 'SF-UI-Heavy', sans-serif;
+}
+
+#projects{
+    font-size: 30px;
+    font-family: 'SF-UI-Heavy', sans-serif;
+}
+
+#work{
+    font-size: 30px;
+    font-family: 'SF-UI-Heavy', sans-serif;
+}
+
+#summary p{
+    font-size: 16px;
+}
+
+#projects p{
+    font-size: 30px;
+}
 
 .texto a:hover{
     color: #ffffff;
@@ -25,18 +47,18 @@ a{
 
 .header {
     padding-top: 3vw;
-    padding-left: 20vw;
-    padding-right: 20vw;
-    font-size: 40px;
+    padding-left: 25vw;
+    font-size: 28px;
     color: #fff;
     font-family: 'SF-UI-Heavy', sans-serif;
     position: fixed;
+    width: 40%;
 }
 
 .texto{
-    padding-top: 9vw;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-top: 6vw;
+    padding-left: 25vw;
+    padding-right: 25vw;
     font-size: 40px;
     color: #fff;
     font-family: 'SF-UI-Heavy', sans-serif;
@@ -44,7 +66,7 @@ a{
 
 p{
     font-family: 'SF-UI-Regular';
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .lang {
@@ -59,19 +81,18 @@ p{
     display: flex; /* Permite alinhar ícones e textos horizontalmente */
     align-items: center; /* Alinha ícones e textos verticalmente ao centro */
     border-radius: 10px;
-    padding: 5px 10px;
 }
 
-.html{
-    background-color: #e34c26;
+.html img{
+    border-radius: 4px;
 }
 
-.css{
-    background-color: #264de4;
+.css img{
+    border-radius: 4px;
 }
 
-.js{
-    background-color: #f0db4f;
+.js img{
+    border-radius: 4px;
 }
 
 .lang i {
@@ -85,9 +106,9 @@ p{
 }
 
 hr{
-    border: 1px solid #bbb;
+    border: 1px solid #3a3a3a;
     border-radius: 1px;
-    margin-top: 32px;
+    margin-top: 6px;
 }
 
 section#projects {
@@ -345,7 +366,7 @@ button:hover {
 #indicadores {
     position: fixed;
     right: 70px;
-    top: 80%;
+    top: 90%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;

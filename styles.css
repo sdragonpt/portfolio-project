@@ -294,12 +294,19 @@ body {
 
 
 .slide {
-    height: 100vh; /* Ocupa toda a altura da tela */
+    min-height: 100vh; /* Mínimo de 100% da altura da tela */
+    height: auto; /* Permite que o slide se expanda com base no conteúdo */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #1d2024;
 }
+
+.slide {
+    min-height: 100vh; /* Mínimo de 100% da altura da tela */
+    height: auto; /* Permite que o slide se expanda com base no conteúdo */
+}
+
 
 button {
     position: fixed;

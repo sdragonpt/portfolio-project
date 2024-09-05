@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var currentSlide = 0;
     var isChangingSlide = false;
     var autoRotateInterval;
+    var startX, startY, distX, distY; // Variáveis para armazenar os valores de toque
+
 
     // 1. Definir títulos para cada slide
     var slideTitles = [
@@ -39,6 +41,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 4. Definir intervalo de rotação automática (200 segundos)
     autoRotateInterval = setInterval(autoRotate, 200000);
+
+    // Eventos de toque (touch events) para dispositivos móveis
+    document.addEventListener('touchstart', function (event) {
+        clearInterval(autoRotateInterval);
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    });
+
+    document.addEventListener('touchmove', function (event) {
+        distX = event.touches[0].clientX - startX;
+        distY = event.touches[0].clientY - startY;
+    });
+
+    document.addEventListener('touchend', function () {
+        if (isChangingSlide) return;
+
+        if (Math.abs(distY) > Math.abs(distX)) { // Vertical swipe
+            if (distY > 0) {
+                currentSlide = Math.max(currentSlide - 1, 0);
+            } else {
+                currentSlide = Math.min(currentSlide + 1, slides.length - 1);
+            }
+
+            isChangingSlide = true;
+            scrollToSlide(currentSlide);
+            setTimeout(() => isChangingSlide = false, 800);
+
+            updateIndicadores(currentSlide);
+            updateTitle(currentSlide);
+        }
+    });
 
     // 5. Manipulador de eventos de roda para navegar entre os slides
     document.addEventListener('wheel', function (event) {

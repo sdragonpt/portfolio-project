@@ -371,3 +371,135 @@ button:hover {
     font-size: 18px;
 }
 
+/* Estilos para telas menores que 768px (smartphones e tablets pequenos) */
+@media only screen and (max-width: 768px) {
+    /* Ajuste do tamanho da fonte dos textos */
+    #greeting {
+        font-size: 24px; /* Reduzir o tamanho da fonte */
+    }
+
+    #projects, #work {
+        font-size: 24px;
+    }
+
+    .texto {
+        font-size: 18px; /* Ajuste do tamanho da fonte para mobile */
+        padding: 10px;
+    }
+
+    p {
+        font-size: 14px; /* Fonte menor para parágrafos */
+    }
+
+    /* Ajuste do layout das divs de projetos */
+    .container {
+        width: 90%; /* Reduz a largura da container */
+        margin: 0 auto;
+    }
+
+    /* Ajuste do espaçamento para os slides */
+    .container-top {
+        font-size: 20px;
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    /* Ajuste da navegação */
+    .header {
+        padding-top: 10px;
+        padding-left: 5vw;
+        font-size: 32px;
+    }
+
+    nav ul {
+        display: block; /* Exibe os links em blocos, um embaixo do outro */
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Aumenta o espaçamento entre os itens do menu */
+    }
+
+    /* Indicadores de slides menores para mobile */
+    #indicadores {
+        right: 10px;
+        top: 90%;
+    }
+
+    .indicador {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 8px;
+    }
+
+    /* Ajustes nos botões e rodapé */
+    button {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+
+    /* Ajuste das imagens dos projetos */
+    .project img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Estilos para telas menores que 480px (smartphones menores) */
+@media only screen and (max-width: 480px) {
+    /* Ajuste mais agressivo no tamanho da fonte */
+    #greeting {
+        font-size: 24px; /* Fonte menor ainda */
+    }
+
+    #projects, #work {
+        font-size: 20px;
+    }
+
+    .texto {
+        margin-top: 40px;
+        font-size: 40px; /* Texto menor */
+        padding: 8px;
+    }
+
+    p {
+        font-size: 16px; /* Parágrafos menores */
+    }
+
+    /* Ajuste da navegação */
+    .header {
+        padding-top: 0px;
+        padding-left: 2vw;
+        font-size: 32px;
+        width: 80%;
+    }
+
+    .header p{
+        font-size: 18px;
+    }
+
+    /* Reduz o tamanho dos indicadores */
+    .indicador {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 14px;
+        margin-right: 18px;
+    }
+
+    /* Ajuste das divs de projeto */
+    .project {
+        margin-bottom: 15px; /* Menor espaçamento entre projetos */
+    }
+
+    /* Ajuste para o rodapé */
+    footer {
+        font-size: 12px;
+    }
+}
+
+

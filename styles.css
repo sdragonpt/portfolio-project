@@ -452,6 +452,9 @@ button:hover {
 
 /* Estilos para telas menores que 480px (smartphones menores) */
 @media only screen and (max-width: 480px) {
+    section{
+        padding: 0;
+    }
     /* Ajuste mais agressivo no tamanho da fonte */
     #greeting {
         font-size: 24px; /* Fonte menor ainda */
@@ -462,18 +465,37 @@ button:hover {
     }
 
     .texto {
-        margin-top: 40px;
+        margin-top: 30px;
         font-size: 40px; /* Texto menor */
         padding: 8px;
     }
 
     p {
-        font-size: 16px; /* Parágrafos menores */
+        font-size: 14px; /* Parágrafos menores */
     }
+
+    #slide2 p{
+        font-size: 13px;
+    }
+
+    p#work{
+        font-size: 20px;
+    }
+    p#xploraTitle{
+        font-size: 15px;
+    }
+    p#jmeTitle{
+        font-size: 15px;
+    }
+
+    p.rodape{
+        font-size: 15px;
+    }
+
 
     /* Ajuste da navegação */
     .header {
-        padding-top: 0px;
+        padding-top: -50px;
         padding-left: 2vw;
         font-size: 32px;
         width: 80%;

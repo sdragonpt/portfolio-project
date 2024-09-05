@@ -167,51 +167,49 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // function switchLanguage(languageText) {
-    //     for (const key in elements) {
-    //         if (elements[key]) {
-    //             elements[key].innerHTML = languageText[key];
-    //         }
-    //     }
-    //     // Voltar ao primeiro slide com transição suave após troca de idioma
-    //     setTimeout(function() {
-    //         if(currentSlide == 0){
-    //             currentSlide = 0;
-    //             scrollToSlide(currentSlide);
-    //             updateIndicadores(currentSlide);
-    //             updateTitle(currentSlide);
-    //         }
-    //         else if(currentSlide == 1){
-    //             currentSlide = 1;
-    //             scrollToSlide(currentSlide);
-    //             updateIndicadores(currentSlide);
-    //             updateTitle(currentSlide);
-    //         }
-    //         else{
-    //             currentSlide = 2;
-    //             scrollToSlide(currentSlide);
-    //             updateIndicadores(currentSlide);
-    //             updateTitle(currentSlide);
-    //         }
-    //     }, 0);
-    // }
-
     function switchLanguage(languageText) {
-        // Atualizar o conteúdo dos elementos com o novo idioma
         for (const key in elements) {
             if (elements[key]) {
                 elements[key].innerHTML = languageText[key];
             }
         }
-        
-        // Garantir que o slide atual continue visível
-        setTimeout(() => {
-            // Manter o slide atual visível
-            scrollToSlide(currentSlide);
+        // Voltar ao primeiro slide com transição suave após troca de idioma
+        setTimeout(function() {
+            if(currentSlide == 0){
+                currentSlide = 0;
+                scrollToSlide(currentSlide);
+                updateIndicadores(currentSlide);
+                updateTitle(currentSlide);
+            }
+            else if(currentSlide == 1){
+                currentSlide = 1;
+                scrollToSlide(currentSlide);
+                updateIndicadores(currentSlide);
+                updateTitle(currentSlide);
+            }
+            else{
+                currentSlide = 2;
+                scrollToSlide(currentSlide);
+                updateIndicadores(currentSlide);
+                updateTitle(currentSlide);
+            }
         }, 0);
     }
+
+    // function switchLanguage(languageText) {
+    //     // Atualizar o conteúdo dos elementos com o novo idioma
+    //     for (const key in elements) {
+    //         if (elements[key]) {
+    //             elements[key].innerHTML = languageText[key];
+    //         }
+    //     }
     
-    
+    //     // Garantir que o slide atual continue visível
+    //     setTimeout(() => {
+    //         // Manter o slide atual visível
+    //         scrollToSlide(currentSlide);
+    //     }, 0);
+    // }    
     
     var elements = {
         greeting: document.getElementById("greeting"),

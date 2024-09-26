@@ -6,14 +6,18 @@ import Work from '../components/Work';
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/work" element={<Work />} />
-      </Routes>
-    </Router>
+    <div className="flex flex-col min-h-screen bg-zinc-900">
+      <Router>
+        <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/work" element={<Work />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 };
 

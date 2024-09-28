@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="p-8 pt-16 text-white lg:px-[20%] xl:px-[28%] px-10 text-lg">
+    <nav className="p-8 lg:pt-16 pt-10 text-white lg:px-[20%] xl:px-[28%] px-10 text-lg">
       <div className="space-x-4">
         <Link to="/" className="hover:underline">
           home

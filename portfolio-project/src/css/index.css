@@ -3,5 +3,12 @@
 @tailwind utilities;
 
 p, h1, h2, h3, h4, h5{
-    font-family: 'SF-UI-Regular', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
+.underline-2 {
+    text-decoration: underline;
+    text-decoration-color: #777777; 
+}
+
+  

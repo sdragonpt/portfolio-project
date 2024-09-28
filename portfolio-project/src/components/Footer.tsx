@@ -1,16 +1,21 @@
 // src/components/Footer.tsx
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
-const Navbar: React.FC = () => {
+const Footer: React.FC = () => {
   return (
-    <div className="">
-      <div className="logo my-4 mt-8">
-        <a href="https://github.com/sdragonpt" target="_blank" className="mr-4">
-          <FontAwesomeIcon icon={faGithub} size="2x" color="grey" />
+    <div className="my-12">
+      <div className="logo my-4">
+        <a
+          href="https://github.com/sdragonpt"
+          target="_blank"
+          className="mr-4 transition-colors duration-300"
+        >
+          <i className="fa-brands fa-github fa fa-github text-gray-400 hover:text-white transition-colors duration-300" style={{ fontSize: '32px' }} />
         </a>
-        <a href="https://www.linkedin.com/in/sergionfr/" target="_blank">
-          <FontAwesomeIcon icon={faLinkedin} size="2x" color="grey" />
+        <a
+          href="https://www.linkedin.com/in/sergionfr/"
+          target="_blank"
+          className="transition-colors duration-300"
+        >
+          <i className="fa-brands fa-linkedin text-gray-400 hover:text-white transition-colors duration-300" style={{ fontSize: '32px' }} />
         </a>
       </div>
       <p className="text-zinc-400">© 2024 Sérgio Ribeiro</p>
@@ -18,4 +23,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Footer;

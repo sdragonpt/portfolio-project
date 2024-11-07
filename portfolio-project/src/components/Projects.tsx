@@ -192,6 +192,35 @@ const Projects: React.FC = () => {
         </p>
         <p className="text-sm text-zinc-400">fev 2023</p>
       </motion.div>
+
+      {/* Projeto 0.1 */}
+      <motion.div
+        className="my-4"
+        initial={{ opacity: 0, y: 30 }} // Estado inicial
+        animate={{ opacity: 1, y: 0 }} // Estado final
+        exit={{ opacity: 0, y: 30 }} // Estado ao sair
+        transition={{ duration: 0.8, delay: 1.0 }} // Duração da animação com atraso
+      >
+        <a href="https://pedroribeiroatleta.pt" target="_blank">
+          <h2 className="mb-1 font-semibold underline-2">
+            Pedro Ribeiro Atleta
+          </h2>
+        </a>
+        <div className="flex mb-3">
+          <div>
+            <img
+              src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white"
+              alt="WordPress"
+              className="mr-2 lg:mb-0 mb-2 rounded-sm"
+            />
+          </div>
+        </div>
+        <p className="mb-2">
+          I was challenged to develop an informative WordPress website for an
+          athletics athlete
+        </p>
+        <p className="text-sm text-zinc-400">jan 2023</p>
+      </motion.div>
       <Footer />
     </motion.section>
   );

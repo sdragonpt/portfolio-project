@@ -192,6 +192,7 @@ const Projects: React.FC = () => {
         </p>
         <p className="text-sm text-zinc-400">fev 2023</p>
       </motion.div>
+      <hr className="border-t-zinc-800" />
 
       {/* Projeto 0.1 */}
       <motion.div
